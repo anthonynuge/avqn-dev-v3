@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+:root {
+  /* Semantic colors */
+  --bg: 130 40% 96%;
+  --fg: 0 0% 12%;
+  --fg-muted: 0 0% 25%;
+  --border: 0 0% 88%;
+  --card: 0 0% 100%;
+  --accent: 140 70% 45%;
+  --accent-2: 48 95% 54%;
+  --ring: 160 80% 45%;
+  --shadow: 222 14% 50% / 0.25;
+
+  color-scheme: light dark;
+}
+
+html.dark {
+  --bg: 222 22% 6%;
+  --fg: 140 15% 92%;
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    background-color: hsl(var(--bg));
+    color: hsl(var(--fg));
+  }
+
+  body,
+  #root {
+    @apply min-h-dvh;
+  }
+
+  #root {
+    @apply px-7 flex flex-col;
+  }
+}

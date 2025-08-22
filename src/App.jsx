@@ -1,23 +1,22 @@
-import { useState } from "react";
+import { Outlet } from "react-router";
+
+import Navbar from "./layouts/Navbar";
+import Footer from "./layouts/Footer";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p className="text-red-500">
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div className="min-h-screen flex flex-col">
+      {/* Header */}
+      <Navbar />
+
+      {/* main */}
+      <main className="flex-1 ">
+        <Outlet />
+      </main>
+
+      {/* Footer */}
+      <Footer />
+    </div>
   );
 }
 

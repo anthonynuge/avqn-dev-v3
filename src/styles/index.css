@@ -54,8 +54,26 @@ html.dark {
   #root {
     @apply min-h-dvh;
   }
+}
 
-  #root {
-    @apply px-7 flex flex-col;
+@layer utilities {
+  .with-aside {
+    @apply ml-0
+    md:ml-32;
+  }
+
+  .grid-12 {
+    @apply grid grid-cols-12 gap-6;
+  }
+
+  .hero-title {
+    font-size: clamp(1rem, 25vw, 24rem);
+    @apply leading-[1]
+    font-medium;
+  }
+
+  .app-container {
+    @apply px-4
+    md:px-12;
   }
 }
